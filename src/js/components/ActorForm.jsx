@@ -16,51 +16,51 @@ class AddActorForm extends React.Component {
       wis: null,
       cha: null
     });
-    this.update     = this.update.bind(this);
-    this.clearState = this.clearState.bind(this);
-    this.addActor   = this.addActor.bind(this);
+    // this.update     = this.update.bind(this);
+    // this.clearState = this.clearState.bind(this);
+    // this.addActor   = this.addActor.bind(this);
   }
-  update(e) {
-    this.setState = ({
-      name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
-      health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
-      ac: ReactDOM.findDOMNode(this.refs.ac.refs.input).value,
-      initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
-      str:ReactDOM.findDOMNode(this.refs.str.refs.input).value,
-      dex:ReactDOM.findDOMNode(this.refs.dex.refs.input).value,
-      con:ReactDOM.findDOMNode(this.refs.con.refs.input).value,
-      INT:ReactDOM.findDOMNode(this.refs.int.refs.input).value,
-      wis:ReactDOM.findDOMNode(this.refs.wis.refs.input).value,
-    });
-  }
-  clearState(e) {
-    this.setState = ({
-      name: '',
-      health: null,
-      ac: 0,
-      initiative: 0,
-      str: null,
-      dex: null,
-      con: null,
-      INT: null,
-      wis: null,
-      cha: null
-    })
-  }
-  addActor(e) {
-    let actor = {
-      name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
-      health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
-      ac: ReactDOM.findDOMNode(this.refs.ac.refs.input).value,
-      initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
-      str:ReactDOM.findDOMNode(this.refs.str.refs.input).value,
-      dex:ReactDOM.findDOMNode(this.refs.dex.refs.input).value,
-      con:ReactDOM.findDOMNode(this.refs.con.refs.input).value,
-      INT:ReactDOM.findDOMNode(this.refs.int.refs.input).value,
-      wis:ReactDOM.findDOMNode(this.refs.wis.refs.input).value,
-    };
-    console.log(actor);
-  }
+  // update(e) {
+  //   this.setState = ({
+  //     name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
+  //     health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
+  //     ac: ReactDOM.findDOMNode(this.refs.ac.refs.input).value,
+  //     initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
+  //     str:ReactDOM.findDOMNode(this.refs.str.refs.input).value,
+  //     dex:ReactDOM.findDOMNode(this.refs.dex.refs.input).value,
+  //     con:ReactDOM.findDOMNode(this.refs.con.refs.input).value,
+  //     INT:ReactDOM.findDOMNode(this.refs.int.refs.input).value,
+  //     wis:ReactDOM.findDOMNode(this.refs.wis.refs.input).value,
+  //   });
+  // }
+  // clearState(e) {
+  //   this.setState = ({
+  //     name: '',
+  //     health: null,
+  //     ac: 0,
+  //     initiative: 0,
+  //     str: null,
+  //     dex: null,
+  //     con: null,
+  //     INT: null,
+  //     wis: null,
+  //     cha: null
+  //   })
+  // }
+  // addActor(e) {
+  //   let actor = {
+  //     name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
+  //     health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
+  //     ac: ReactDOM.findDOMNode(this.refs.ac.refs.input).value,
+  //     initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
+  //     str:ReactDOM.findDOMNode(this.refs.str.refs.input).value,
+  //     dex:ReactDOM.findDOMNode(this.refs.dex.refs.input).value,
+  //     con:ReactDOM.findDOMNode(this.refs.con.refs.input).value,
+  //     INT:ReactDOM.findDOMNode(this.refs.int.refs.input).value,
+  //     wis:ReactDOM.findDOMNode(this.refs.wis.refs.input).value,
+  //   };
+  //   console.log(actor);
+  // }
   render() {
     return(
       <form className="actor-wrapper">

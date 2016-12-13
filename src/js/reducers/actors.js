@@ -1,11 +1,11 @@
-import { ADD_ACTOR, EDIT_ACTOR, DELETE_ACTOR } from '../constants/ActionTypes.js';
+import { ADD_ACTOR, EDIT_ACTOR, DELETE_ACTOR } from '../constants/ActionTypes';
 
 const initState = {
   actor: [],
   id: 0
 }
 
-const actors = (state=initState, action) {
+const actors = (state=initState, action) => {
   switch(action.type) {
     case ADD_ACTOR :
       let actorTemp = action.actor;
@@ -17,7 +17,7 @@ const actors = (state=initState, action) {
       return [
         {
           actor: [addActor],
-          id: currentID;
+          id: currentID
         },
         ... state
       ];
