@@ -1,5 +1,15 @@
-#Turn Order 5e - UNDER CONSTRUCTION
+#Turn Order 5e
+Building a campaign? Don't know how to keep track of PCs and NPCs during combat? Look no further. This is a turn order tracker for Open5e (or similar) campaigns.
 
-This is a personal project for mine and any other DMs out there. I'm hoping to make turn order easier with a turn order and health tracker.
+The tracker will keep track of Initiative, Name, HP, and optionally: AC, WIS, INT, CHA, STR, CON, DEX.
 
-Check back soon for updates. 
+This project uses React, Redux, and ES6.
+
+## Contributing
+Feel free to add issues or features to the repo.
+
+Clone or fork repo and then follow these steps:
+* run `npm install`
+* install `npm webpack-dev-server -g`
+* run `npm start`
+* navigate to localhost:3333 to view project

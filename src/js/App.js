@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AddActorForm from './components/ActorForm.jsx';
+import AppForm from './containers/App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers';
@@ -12,7 +12,7 @@ const render = () => {
     <Provider store={store}>
       <div>
         <h2>Hello World</h2>
-        <AddActorForm />
+        <AppForm />
       </div>
     </Provider>
   );

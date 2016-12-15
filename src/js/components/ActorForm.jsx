@@ -1,66 +1,22 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
+import BootstrapForms from './BootstrapForms.jsx';
 
-class AddActorForm extends React.Component {
-  constructor() {
-    super();
-    this.state = ({
-      name: '',
-      health: null,
-      ac: 0,
-      initiative: 0,
-      str: null,
-      dex: null,
-      con: null,
-      INT: null,
-      wis: null,
-      cha: null
-    });
-    // this.update     = this.update.bind(this);
-    // this.clearState = this.clearState.bind(this);
-    // this.addActor   = this.addActor.bind(this);
+export default class AddActorForm extends Component {
+  static propTypes = {
+    addActor: PropTypes.func.isRequired
   }
-  // update(e) {
-  //   this.setState = ({
-  //     name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
-  //     health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
-  //     ac: ReactDOM.findDOMNode(this.refs.ac.refs.input).value,
-  //     initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
-  //     str:ReactDOM.findDOMNode(this.refs.str.refs.input).value,
-  //     dex:ReactDOM.findDOMNode(this.refs.dex.refs.input).value,
-  //     con:ReactDOM.findDOMNode(this.refs.con.refs.input).value,
-  //     INT:ReactDOM.findDOMNode(this.refs.int.refs.input).value,
-  //     wis:ReactDOM.findDOMNode(this.refs.wis.refs.input).value,
-  //   });
-  // }
-  // clearState(e) {
-  //   this.setState = ({
-  //     name: '',
-  //     health: null,
-  //     ac: 0,
-  //     initiative: 0,
-  //     str: null,
-  //     dex: null,
-  //     con: null,
-  //     INT: null,
-  //     wis: null,
-  //     cha: null
-  //   })
-  // }
-  // addActor(e) {
-  //   let actor = {
-  //     name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
-  //     health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
-  //     ac: ReactDOM.findDOMNode(this.refs.ac.refs.input).value,
-  //     initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
-  //     str:ReactDOM.findDOMNode(this.refs.str.refs.input).value,
-  //     dex:ReactDOM.findDOMNode(this.refs.dex.refs.input).value,
-  //     con:ReactDOM.findDOMNode(this.refs.con.refs.input).value,
-  //     INT:ReactDOM.findDOMNode(this.refs.int.refs.input).value,
-  //     wis:ReactDOM.findDOMNode(this.refs.wis.refs.input).value,
-  //   };
-  //   console.log(actor);
-  // }
+
+  addActor = () => {
+    let curActor = {
+      name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
+      health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
+      armor: ReactDOM.findDOMNode(this.refs.armor.refs.input).value,
+      initiative: ReactDOM.findDOMNode(this.refs.armor.refs.input).value
+    }
+    this.props.addActor(curActor);
+  }
+
   render() {
     return(
       <form className="actor-wrapper">
@@ -69,33 +25,25 @@ class AddActorForm extends React.Component {
             <BootstrapForms ref="name"
               type="text"
               label="Monster or NPC Name"
-              id="name"
-              update={this.update}
-              val={this.state.name} />
+              id="name" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="health"
               type="number"
               label="Hit Points"
-              id="health"
-              update={this.update}
-              val={this.state.health} />
+              id="health" />
           </div>
           <div className="col-sm-2">
-            <BootstrapForms ref="ac"
+            <BootstrapForms ref="armor"
               type="number"
               label="AC"
-              id="ac"
-              update={this.update}
-              val={this.state.ac} />
+              id="armor" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="initiative"
               type="number"
               label="Initiative"
-              id="initiative"
-              update={this.update}
-              val={this.state.initiative} />
+              id="initiative" />
           </div>
         </div>
 
@@ -104,50 +52,38 @@ class AddActorForm extends React.Component {
             <BootstrapForms ref="str"
               type="number"
               label="STR"
-              id="str"
-              update={this.update}
-              val={this.state.str} />
+              id="str" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="dex"
               type="number"
               label="DEX"
-              id="dex"
-              update={this.update}
-              val={this.state.dex} />
+              id="dex" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="con"
               type="number"
               label="CON"
-              id="con"
-              update={this.update}
-              val={this.state.con} />
+              id="con" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="INT"
               type="number"
               label="INT"
-              id="int"
-              update={this.update}
-              val={this.state.INT} />
+              id="int" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="wis"
               type="number"
               label="WIS"
-              id="wis"
-              update={this.update}
-              val={this.state.wis} />
+              id="wis" />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="cha"
               type="number"
               label="CHA"
               id="cha"
-              ref="cha"
-              update={this.update}
-              val={this.state.cha} />
+              ref="cha" />
           </div>
         </div>
 
@@ -162,23 +98,4 @@ class AddActorForm extends React.Component {
   }
 }
 
-class BootstrapForms extends React.Component {
-  render() {
-    let label = <label htmlFor={this.props.id}>{this.props.label}</label>;
-
-    return (
-      <div className="form-group">
-        {label}
-        <input
-          ref="input"
-          type={this.props.type}
-          className="form-control"
-          id={this.props.id}
-          onChange={this.props.update}
-          defaultValue={this.props.val} />
-      </div>
-    );
-  }
-}
-
-export default AddActorForm;
+// export default AddActorForm;

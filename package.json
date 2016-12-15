@@ -12,7 +12,7 @@
     "redux",
     "javascript"
   ],
-  "jshintConfig" : {
+  "jshintConfig": {
     "esversion": 6
   },
   "author": "abbetancourt",
@@ -31,6 +31,8 @@
     "webpack": "^1.13.2"
   },
   "devDependencies": {
+    "babel-preset-stage-2": "^6.18.0",
+    "uuid": "^3.0.1",
     "webpack-dev-server": "^1.16.2"
   }
 }
