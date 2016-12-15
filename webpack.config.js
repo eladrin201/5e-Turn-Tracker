@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './src/js/main.js',
+    entry: './src/js/index.js',
     output: {
         path: './',
         filename: 'index.js'
@@ -11,11 +11,11 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react', 'stage-2']
                 }
             }
         ]
