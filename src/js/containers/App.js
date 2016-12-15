@@ -8,7 +8,7 @@ import * as ActorActions from '../actions';
 const App = ({actors, actions}) => (
   <div>
     <AddActorForm addActor={actions.addActor} />
-    <ActorList />
+    <ActorList actors={actors.actors} />
   </div>
 )
 
