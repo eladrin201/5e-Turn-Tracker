@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom';
 import BootstrapForms from './BootstrapForms.jsx';
+import RadioSlider from './SliderOption.jsx';
 
 export default class AddActorForm extends Component {
   static propTypes = {
@@ -14,6 +15,7 @@ export default class AddActorForm extends Component {
       armor: ReactDOM.findDOMNode(this.refs.armor.refs.input).value,
       initiative: ReactDOM.findDOMNode(this.refs.initiative.refs.input).value,
       strength: ReactDOM.findDOMNode(this.refs.strength.refs.input).value,
+      actorType: ReactDOM.findDOMNode(this.refs.actorType.refs.input).value,
       dexterity: ReactDOM.findDOMNode(this.refs.dexterity.refs.input).value,
       constitution: ReactDOM.findDOMNode(this.refs.constitution.refs.input).value,
       intelligence: ReactDOM.findDOMNode(this.refs.intelligence.refs.input).value,
@@ -23,19 +25,24 @@ export default class AddActorForm extends Component {
     this.props.addActor(curActor);
   };
 
-  clearFrom = () => {
+  clearFrom() {
     // Currently broken, must fix
     document.getElementById("add-actor").reset();
   };
 
+  updateActor(e) {
+    console.log(e.target);
+  };
+
   render() {
+
     return(
       <form className="actor-wrapper" id="add-actor">
         <div className="row">
           <div className="col-sm-4">
             <BootstrapForms ref="name"
               type="text"
-              label="Monster or NPC Name"
+              label="Name"
               id="name" />
           </div>
           <div className="col-sm-2">
@@ -55,6 +62,17 @@ export default class AddActorForm extends Component {
               type="number"
               label="Initiative"
               id="initiative" />
+          </div>
+        </div>
+
+        <div className="row" id="toggle-type">
+          <div className="col-sm-12">
+            <RadioSlider ref="actorType"
+              val1="pc"
+              val2="npc"
+              label1="Player"
+              label2="Monster/NPC"
+              update={this.updateActor} />
           </div>
         </div>
 
