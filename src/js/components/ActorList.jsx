@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import ActorItem from './ActorItem.jsx';
 
 export default class ActorList extends Component {
-  static propTypes = {
-    actors: PropTypes.array.isRequired
-  }
 
   render() {
     return (
@@ -16,4 +13,8 @@ export default class ActorList extends Component {
       </ul>
     );
   }
+}
+
+ActorList.propTypes = {
+  actors: PropTypes.array.isRequired
 }

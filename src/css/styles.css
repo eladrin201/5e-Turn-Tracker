@@ -1,0 +1,10 @@
+.actors-container {
+  list-style: none;
+  padding: 30px 0 0 0;
+  margin-top: 35px;
+  border-top: 3px solid;
+}
+
+#monster-stats {
+  display: none;
+};

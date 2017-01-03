@@ -11,7 +11,7 @@ const render = () => {
   const App = (
     <Provider store={store}>
       <div>
-        <h2>Hello World</h2>
+        <h2>Add Actor</h2>
         <AppForm />
       </div>
     </Provider>
