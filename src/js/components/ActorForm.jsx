@@ -3,13 +3,27 @@ import ReactDOM from 'react-dom';
 import BootstrapForms from './BootstrapForms.jsx';
 import RadioSlider from './SliderOption.jsx';
 
+let curActor = {
+  name: null,
+  health: 0,
+  armor: 0,
+  initiative: 0,
+  strength: null,
+  actorType: 'pc',
+  dexterity: null,
+  constitution: null,
+  intelligence: null,
+  wisdom: null,
+  charisma: null
+}
+
 export default class AddActorForm extends Component {
   static propTypes = {
     addActor: PropTypes.func.isRequired
   }
 
   addActor = () => {
-    let curActor = {
+    curActor = {
       name: ReactDOM.findDOMNode(this.refs.name.refs.input).value,
       health: ReactDOM.findDOMNode(this.refs.health.refs.input).value,
       armor: ReactDOM.findDOMNode(this.refs.armor.refs.input).value,
@@ -30,12 +44,23 @@ export default class AddActorForm extends Component {
     document.getElementById("add-actor").reset();
   };
 
+  update(e) {
+    let id = e.target.id;
+    curActor[id] = e.target.value;
+  };
+
   updateActor(e) {
-    console.log(e.target);
+    curActor.actorType = e.target.value;
+    console.log(curActor);
+
+    if (e.target.value === 'pc') {
+      document.getElementById('monster-stats').style.display = 'none';
+    } else {
+      document.getElementById('monster-stats').style.display = 'block';
+    }
   };
 
   render() {
-
     return(
       <form className="actor-wrapper" id="add-actor">
         <div className="row">
@@ -43,25 +68,29 @@ export default class AddActorForm extends Component {
             <BootstrapForms ref="name"
               type="text"
               label="Name"
-              id="name" />
+              id="name"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="health"
               type="number"
               label="Hit Points"
-              id="health" />
+              id="health"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="armor"
               type="number"
               label="AC"
-              id="armor" />
+              id="armor"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="initiative"
               type="number"
               label="Initiative"
-              id="initiative" />
+              id="initiative"
+              update={this.update} />
           </div>
         </div>
 
@@ -81,37 +110,43 @@ export default class AddActorForm extends Component {
             <BootstrapForms ref="strength"
               type="number"
               label="STR"
-              id="strength" />
+              id="strength"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="dexterity"
               type="number"
               label="DEX"
-              id="dexterity" />
+              id="dexterity"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="constitution"
               type="number"
               label="CON"
-              id="constitution" />
+              id="constitution"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="intelligence"
               type="number"
               label="INT"
-              id="intelligence" />
+              id="intelligence"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="wisdom"
               type="number"
               label="WIS"
-              id="wisdom" />
+              id="wisdom"
+              update={this.update} />
           </div>
           <div className="col-sm-2">
             <BootstrapForms ref="charisma"
               type="number"
               label="CHA"
-              id="charisma" />
+              id="charisma"
+              update={this.update} />
           </div>
         </div>
 
