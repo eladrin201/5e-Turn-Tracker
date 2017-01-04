@@ -45,13 +45,12 @@ export default class AddActorForm extends Component {
   };
 
   update(e) {
-    let id = e.target.id;
-    curActor[id] = e.target.value;
+    let itemID = e.target.id;
+    curActor[itemID] = e.target.value;
   };
 
   updateActor(e) {
     curActor.actorType = e.target.value;
-    console.log(curActor);
 
     if (e.target.value === 'pc') {
       document.getElementById('monster-stats').style.display = 'none';

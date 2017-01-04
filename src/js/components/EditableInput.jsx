@@ -13,8 +13,10 @@ class EditableInput extends Component {
           ref="input"
           type={this.props.type}
           className="form-control hidden-input"
+          id={this.props.id}
           defaultValue={this.props.val}
-          onChange={this.props.editAction} />
+          onChange={this.props.update}
+           />
       </div>
     );
   }
@@ -23,8 +25,9 @@ class EditableInput extends Component {
 EditableInput.propTypes = {
   val: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  // editAction: Props.func.isRequired,
-  type: PropTypes.string.isRequired
+  update: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired
 }
 
 export default EditableInput;
